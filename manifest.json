@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Webpage Sidebar",
+  "version": "0.0.1",
+  "description": "Opens websites on sidebar by one click",
+
+  "icons": {
+    "48": "icon/icon-48.png"
+  },
+  "permissions": [
+  ],
+  "browser_action": {
+    "default_icon": "icon/icon-48.png",
+    "default_title": "Webpage Sidebar Adder",
+    "default_popup": "launcher/launcher.html",
+    "browser_style": true
+  },
+  "sidebar_action": {
+    "default_icon": "icon/icon-48.png",
+    "default_title": "Webpage Sidebar Viewer",
+    "default_panel": "sidebar/sidebar.html"
+  }
+}
