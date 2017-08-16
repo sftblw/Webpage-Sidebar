@@ -2,13 +2,21 @@
   "manifest_version": 2,
   "name": "Webpage Sidebar",
   "version": "0.0.1",
-  "description": "Opens websites on sidebar by one click",
-
+  "description": "Opens websites on sidebar by popup (can it be changed?)",
+  
   "icons": {
     "48": "icon/icon-48.png"
   },
+  "applications": {
+    "gecko": {"id": "webpage_sidebar@sftblw.moe"}
+  },
+
   "permissions": [
+    "storage"
   ],
+  "background": {
+    "scripts": ["launcher/storage.js"]
+  },
   "browser_action": {
     "default_icon": "icon/icon-48.png",
     "default_title": "Webpage Sidebar Adder",
