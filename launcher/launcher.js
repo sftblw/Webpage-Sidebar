@@ -3,7 +3,7 @@
 // initialize list
 
 browser.runtime.sendMessage({kind: 'storage.sites.get'}).then( (message) => {
-  console.log(message);
+  // console.log(message);
   let ul = document.querySelector('#sites ul');
   while (ul.firstChild) {
     ul.removeChild(ul.firstChild);
@@ -69,12 +69,26 @@ function addSite (ev) {
   addSiteElem(url);
 }
 
-function addSiteElem(url) {
-  let template = `<a href="${url}" class="openSite">${url}</a>
-  <input type="button" value="X" class="removeSite"/>`;
+const remove_elem_base = document.createElement('input');
+{
+  remove_elem_base.setAttribute('type', 'button');
+  remove_elem_base.setAttribute('value', 'X');
+  remove_elem_base.setAttribute('class', 'removeSite');
+}
+const a_elem_base = document.createElement('a');
+{
+  a_elem_base.setAttribute('class', 'openSite');
+}
 
+function addSiteElem(url) {
   let li_elem = document.createElement('li');
-  li_elem.innerHTML = template;
+  let a_elem = a_elem_base.cloneNode();
+  a_elem.textContent = url;
+  a_elem.setAttribute('href', url);
+  let remove_elem = remove_elem_base.cloneNode();
+
+  li_elem.appendChild(a_elem);
+  li_elem.appendChild(remove_elem);
 
   document.querySelector('#sites ul').appendChild(li_elem);
 }
@@ -84,7 +98,7 @@ function removeSite (ev) {
   
   ev.target.parentNode.parentNode.removeChild(ev.target.parentNode);
   browser.runtime.sendMessage({kind: 'storage.sites.remove', site: {
-    'url': ev.target.parentNode.querySelector('.openSite').href
+    'url': ev.target.parentNode.querySelector('.openSite').getAttribute('href')
   }}).then(handleOk);
 }
 
