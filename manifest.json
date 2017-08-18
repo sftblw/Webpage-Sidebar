@@ -5,7 +5,9 @@
   "description": "Opens websites on sidebar managed on addon popup button",
   
   "icons": {
-    "48": "icon/icon-48.png"
+    "32": "icon/icon-32.png",
+    "48": "icon/icon-48.png",
+    "64": "icon/icon-64.png"
   },
   "applications": {
     "gecko": {"id": "webpage_sidebar@sftblw.moe"}
