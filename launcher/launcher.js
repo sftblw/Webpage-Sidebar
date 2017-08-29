@@ -105,11 +105,11 @@ function addSiteElem(url) {
 
 function removeSite (ev) {
   ev.preventDefault();
-  
-  ev.target.parentNode.parentNode.removeChild(ev.target.parentNode);
+
   browser.runtime.sendMessage({kind: 'storage.sites.remove', site: {
     'url': ev.target.parentNode.querySelector('.openSite').getAttribute('href')
   }}).then(handleOk);
+  ev.target.parentNode.parentNode.removeChild(ev.target.parentNode);
 }
 
 function handleOk(response) {

@@ -19,7 +19,7 @@ browser.runtime.onMessage.addListener( (request, sender, sendResponse) => {
   }
   else if (request.kind === 'storage.sites.remove') {
     sites = sites.filter( (value, index) => {
-      value.url != request.site.url
+      return value.url != request.site.url
     });
     browser.storage.sync.set({sites});
     sendResponse('ok');
