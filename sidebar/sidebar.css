@@ -1,3 +1,5 @@
 html, body {width: 100%;}
+body {padding: 1em;}
 img {display: block; margin: auto; width: 256px; height: auto; 
   object-fit: contain;}
+h1, h2, h3, h4, h5, h6 {padding: .1em; border-bottom: 1px solid grey;}
