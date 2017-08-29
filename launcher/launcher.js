@@ -70,6 +70,11 @@ function addSite (ev) {
     urlElem.value = '';
   }
 
+  if (url === '') {
+    alert('Site URL is empty.');
+    return
+  }
+
   browser.runtime.sendMessage({kind: 'storage.sites.add', site: {url}}).then(handleOk);
   addSiteElem(url);
 }
