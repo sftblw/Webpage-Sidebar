@@ -37,6 +37,11 @@ document.addEventListener('submit', (ev) => {
 
 function openSite (ev) {
   ev.preventDefault();
+
+  // open sidebar
+  if (browser.sidebarAction.open !== undefined) { browser.sidebarAction.open(); }
+
+  // set URL
   browser.sidebarAction.getPanel({})
     .then( (panel) => { 
       browser.sidebarAction.setPanel({panel: ev.target.href});
