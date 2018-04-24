@@ -5,7 +5,7 @@ body {
 
 nav#sites ul li {margin: 1px; padding: .5em; background-color: white; border-bottom: 1px solid grey; vertical-align: center; overflow:hidden;}
 nav#sites ul li:last-of-type {border-bottom: none; }
-nav#sites a {line-height: 2em; padding: .5em;}
+nav#sites a {line-height: 2em; padding: .5em; display: inline-block;}
 nav#sites ul li input.removeSite { width: 2em; height: 2em; float: right;}
 
 form.addSite input {height: 2em;}
