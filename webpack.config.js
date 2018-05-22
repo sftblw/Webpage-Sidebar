@@ -26,5 +26,5 @@ module.exports = {
             'node_modules',
         ]
     },
-    devtool: 'sourcemap'
+    // devtool: 'sourcemap'
 };

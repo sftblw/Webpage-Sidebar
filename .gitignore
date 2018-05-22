@@ -1,4 +1,6 @@
 web-ext-artifacts
+
+*.js.map
 # Created by https://www.gitignore.io/api/node
 
 ### Node ###

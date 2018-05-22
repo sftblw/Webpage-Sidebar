@@ -18,19 +18,19 @@ browser.runtime.sendMessage({ kind: 'storage.sites.get' }).then((message) => {
 
 // ref: https://github.com/mdn/webextensions-examples/blob/master/beastify/popup/choose_beast.js
 document.addEventListener('click', (ev) => {
-  if (ev.target.classList.contains('open_site')) {
+  if (ev.target.classList.contains('open-site')) {
     openSite(ev);
   }
-  else if (ev.target.classList.contains('add_site')) {
+  else if (ev.target.classList.contains('add-site')) {
     addSite(ev);
   }
-  else if (ev.target.classList.contains('remove_site')) {
+  else if (ev.target.classList.contains('remove-site')) {
     removeSite(ev);
   }
 });
 
 document.addEventListener('submit', (ev) => {
-  if (ev.target.classList.contains('add_site')) {
+  if (ev.target.classList.contains('add-site')) {
     addSite(ev);
   }
 });
@@ -64,7 +64,7 @@ function addSite(ev) {
       urlElem = ev.target.parentNode.querySelector('.url');
       url = urlElem.value;
     } else {
-      console.error(`unknown event source ${ev.target.nodeName} for add_site(). aborting.`);
+      console.error(`unknown event source ${ev.target.nodeName} for add-site(). aborting.`);
       return;
     }
     urlElem.value = '';
@@ -83,11 +83,11 @@ const remove_elem_base = document.createElement('input');
 {
   remove_elem_base.setAttribute('type', 'button');
   remove_elem_base.setAttribute('value', 'X');
-  remove_elem_base.setAttribute('class', 'remove_site');
+  remove_elem_base.setAttribute('class', 'remove-site list-item');
 }
 const a_elem_base = document.createElement('a');
 {
-  a_elem_base.setAttribute('class', 'open_site');
+  a_elem_base.setAttribute('class', 'open-site list-item');
 }
 
 function addSiteElem(url) {
@@ -108,7 +108,7 @@ function removeSite(ev) {
 
   browser.runtime.sendMessage({
     kind: 'storage.sites.remove', site: {
-      'url': ev.target.parentNode.querySelector('.open_site').getAttribute('href')
+      'url': ev.target.parentNode.querySelector('.open-site').getAttribute('href')
     }
   }).then(handleOk);
   ev.target.parentNode.parentNode.removeChild(ev.target.parentNode);

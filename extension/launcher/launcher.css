@@ -3,11 +3,26 @@ body {
   min-width: 128px;
 }
 
-nav#sites ul li a {margin: 1px; padding: .5em; border-bottom: 1px solid grey; vertical-align: center; overflow:hidden;}
-nav#sites ul li:last-of-type {border-bottom: none; }
-nav#sites a {line-height: 2em; padding: .5em; display: inline-block;}
-nav#sites ul li input.removeSite { width: 2em; height: 2em; float: right;}
+.list-item {
+  line-height: 2em;
+  font-size: 1em;
+  padding: .5em;
 
-form.addSite input {height: 2em; }
-form.addSite input.url {box-sizing: border-box; width: calc( 100% - 2em);}
-form.addSite input.addSite {box-sizing: border-box; float: right; width: 2em; }
+  vertical-align: center;
+}
+
+nav#sites ul li a            { display: block; width: calc(100% - 3em); float: left;}
+nav#sites ul li              { border-bottom: 1px solid grey; overflow: hidden; }
+nav#sites ul li:last-of-type { border-bottom: none; }
+nav#sites ul li input.remove-site { width: 3em; height: 3em; float: right;  line-height: 1.5em;  }
+
+form.add-site { display: block; overflow: hidden; }
+form.add-site input.url, form.add-site input.add-site {
+  line-height: 2em;
+  font-size: 1em;
+  padding: .5em;
+
+  vertical-align: center;
+}
+form.add-site input.url {box-sizing: border-box; width: calc(100% - 3em); height: 3em; display: block; float: left;}
+form.add-site input.add-site {box-sizing: border-box; display: block; float: right; width: 3em; height: 3em; line-height: 1.5em; }
