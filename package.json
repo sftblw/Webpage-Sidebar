@@ -4,7 +4,8 @@
   "description": "Opens websites on sidebar managed on addon popup button",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -w --display-error-details --progress --colors",
+    "build": "webpack --display-error-details --progress --colors",
+    "build-ext": "web-ext build -s ./extension",
     "start": "web-ext run -s extension/"
   },
   "repository": {
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/sftblw/Webpage-Sidebar#readme",
   "devDependencies": {
+    "web-ext": "^2.6.0",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.3"
   }
