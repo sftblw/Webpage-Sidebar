@@ -1,0 +1,27 @@
+{
+  "name": "webpage-sidebar",
+  "version": "0.0.5",
+  "description": "Opens websites on sidebar managed on addon popup button",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -w --display-error-details --progress --colors",
+    "start": "web-ext run -s extension/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sftblw/Webpage-Sidebar.git"
+  },
+  "keywords": [
+    "webextensions"
+  ],
+  "author": "Ch. (@sftblw)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sftblw/Webpage-Sidebar/issues"
+  },
+  "homepage": "https://github.com/sftblw/Webpage-Sidebar#readme",
+  "devDependencies": {
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
+  }
+}
