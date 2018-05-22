@@ -2,7 +2,7 @@
 
 // initialize list
 
-browser.runtime.sendMessage({kind: 'storage.sites.get'}).then( (message) => {
+browser.runtime.sendMessage({ kind: 'storage.sites.get' }).then((message) => {
   // console.log(message);
   let ul = document.querySelector('#sites ul');
   while (ul.firstChild) {
@@ -18,24 +18,24 @@ browser.runtime.sendMessage({kind: 'storage.sites.get'}).then( (message) => {
 
 // ref: https://github.com/mdn/webextensions-examples/blob/master/beastify/popup/choose_beast.js
 document.addEventListener('click', (ev) => {
-  if (ev.target.classList.contains('openSite')) {
+  if (ev.target.classList.contains('open_site')) {
     openSite(ev);
   }
-  else if (ev.target.classList.contains('addSite')) {
+  else if (ev.target.classList.contains('add_site')) {
     addSite(ev);
   }
-  else if (ev.target.classList.contains('removeSite')) {
+  else if (ev.target.classList.contains('remove_site')) {
     removeSite(ev);
   }
 });
 
 document.addEventListener('submit', (ev) => {
-  if (ev.target.classList.contains('addSite')) {
+  if (ev.target.classList.contains('add_site')) {
     addSite(ev);
   }
 });
 
-function openSite (ev) {
+function openSite(ev) {
   ev.preventDefault();
 
   // open sidebar
@@ -43,16 +43,16 @@ function openSite (ev) {
 
   // set URL
   browser.sidebarAction.getPanel({})
-    .then( (panel) => { 
-      browser.sidebarAction.setPanel({panel: ev.target.href});
+    .then((panel) => {
+      browser.sidebarAction.setPanel({ panel: ev.target.href });
     });
 }
 
-function addSite (ev) {
+function addSite(ev) {
   ev.preventDefault();
 
   let url;
-  
+
   {
     let urlElem;
 
@@ -64,7 +64,7 @@ function addSite (ev) {
       urlElem = ev.target.parentNode.querySelector('.url');
       url = urlElem.value;
     } else {
-      console.error(`unknown event source ${ev.target.nodeName} for addSite(). aborting.`);
+      console.error(`unknown event source ${ev.target.nodeName} for add_site(). aborting.`);
       return;
     }
     urlElem.value = '';
@@ -75,7 +75,7 @@ function addSite (ev) {
     return
   }
 
-  browser.runtime.sendMessage({kind: 'storage.sites.add', site: {url}}).then(handleOk);
+  browser.runtime.sendMessage({ kind: 'storage.sites.add', site: { url } }).then(handleOk);
   addSiteElem(url);
 }
 
@@ -83,11 +83,11 @@ const remove_elem_base = document.createElement('input');
 {
   remove_elem_base.setAttribute('type', 'button');
   remove_elem_base.setAttribute('value', 'X');
-  remove_elem_base.setAttribute('class', 'removeSite');
+  remove_elem_base.setAttribute('class', 'remove_site');
 }
 const a_elem_base = document.createElement('a');
 {
-  a_elem_base.setAttribute('class', 'openSite');
+  a_elem_base.setAttribute('class', 'open_site');
 }
 
 function addSiteElem(url) {
@@ -103,12 +103,14 @@ function addSiteElem(url) {
   document.querySelector('#sites ul').appendChild(li_elem);
 }
 
-function removeSite (ev) {
+function removeSite(ev) {
   ev.preventDefault();
 
-  browser.runtime.sendMessage({kind: 'storage.sites.remove', site: {
-    'url': ev.target.parentNode.querySelector('.openSite').getAttribute('href')
-  }}).then(handleOk);
+  browser.runtime.sendMessage({
+    kind: 'storage.sites.remove', site: {
+      'url': ev.target.parentNode.querySelector('.open_site').getAttribute('href')
+    }
+  }).then(handleOk);
   ev.target.parentNode.parentNode.removeChild(ev.target.parentNode);
 }
 
