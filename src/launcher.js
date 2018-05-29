@@ -48,6 +48,19 @@ function openSite(ev) {
     });
 }
 
+function validateUrl(url) {
+    if (url === '') {
+        throw 'Site URL is empty.';
+    }
+    else if (url.match(/^file:\/\//g)) {
+        throw 'This addon does not support local files yet.';
+    }
+    else if (! url.match(/^http/g)) {
+        return `https://${url}`;
+    }
+    else return url;
+}
+
 function addSite(ev) {
   ev.preventDefault();
 
@@ -70,9 +83,11 @@ function addSite(ev) {
     urlElem.value = '';
   }
 
-  if (url === '') {
-    alert('Site URL is empty.');
-    return
+  try {
+    url = validateUrl(url);
+  } catch (errorStr) {
+    alert(errorStr);
+    return;
   }
 
   browser.runtime.sendMessage({ kind: 'storage.sites.add', site: { url } }).then(handleOk);
