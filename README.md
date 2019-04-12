@@ -1,15 +1,29 @@
-# webpage_sidebar
+# Webpage-Sidebar
 
-- It should be an [WebExtensions API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) based sidebar website viewer in near or far future?
-- not suitable for use for now, aka "early exploration stage"
+- [WebExtensions API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) based sidebar website viewer
 
-## dev
+## Get it
 
-1. npm install
-2. npm run build
+- [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/webpage-sidebar/)
+- other browsers: issue [#8](https://github.com/sftblw/Webpage-Sidebar/issues/8)
+
+## develop
+
+### raw
+
+1. `npm install`
+2. `npm run build`
 3. open your firefox and go to [about:debugging](about:debugging)
 4. load `extension/manifest.json`
 5. test
+
+### vscode
+
+or on VSCode, build and F5.
+
+## test code
+
+not yet
 
 ## release
 
