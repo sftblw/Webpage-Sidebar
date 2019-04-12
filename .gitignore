@@ -1,3 +1,7 @@
+.cache
+extension
+package-lock.json
+
 web-ext-artifacts
 
 *.js.map
