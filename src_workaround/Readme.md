@@ -1,0 +1,1 @@
+This directory contains [workaround of bug](https://github.com/kevincharm/parcel-plugin-web-extension/issues/14)

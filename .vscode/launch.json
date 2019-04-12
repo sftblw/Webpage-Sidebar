@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch addon",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "addonType": "webExtension",
+            "addonPath": "${workspaceFolder}\\extension",
+            "sourceMaps": "client",
+            "log": {
+                "consoleLevel": {
+                    // "PathConversion": "Debug",
+                    "default": "Error"
+                }
+            }
+        }
+    ]
+}

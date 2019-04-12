@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Webpage Sidebar",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Opens websites on sidebar managed on addon popup button",
   "icons": {
     "32": "icon/icon-32.png",
@@ -18,7 +18,7 @@
   ],
   "background": {
     "scripts": [
-      "src/storage.js"
+      "background/storage.ts"
     ]
   },
   "browser_action": {
