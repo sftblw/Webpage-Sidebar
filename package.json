@@ -32,17 +32,13 @@
     "sass": "^1.17.3",
     "tslint": "^5.14.0",
     "typescript": "^3.3.4000",
+    "vue": "^2.6.10",
     "vue-class-component": "^7.0.1",
     "vue-hot-reload-api": "^2.3.3",
     "vue-property-decorator": "^8.0.0",
     "vue-template-compiler": "^2.6.10",
     "vuex": "3.0.1",
-    "vuex-class": "^0.3.2",
-    "vuex-type-helper": "^1.2.1",
     "web-ext": "^3.0.0",
     "web-ext-types": "^3.1.0"
-  },
-  "dependencies": {
-    "vue": "^2.6.10"
   }
 }
