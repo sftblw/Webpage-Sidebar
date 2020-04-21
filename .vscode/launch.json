@@ -6,15 +6,18 @@
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "addonType": "webExtension",
             "addonPath": "${workspaceFolder}\\extension",
-            "sourceMaps": "client",
             "log": {
                 "consoleLevel": {
-                    // "PathConversion": "Debug",
                     "default": "Error"
                 }
-            }
+            },
+            "pathMappings": [
+                {
+                    "url": "moz-extension:///src",
+                    "path": "${workspaceFolder}/src"
+                }
+            ]
         }
     ]
 }

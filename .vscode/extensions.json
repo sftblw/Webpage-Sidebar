@@ -3,6 +3,7 @@
         "ms-vscode.vscode-typescript-tslint-plugin",
         "prograhammer.tslint-vue",
         "octref.vetur",
-        "robinbentley.sass-indented"
+        "robinbentley.sass-indented",
+        "firefox-devtools.vscode-firefox-debug"
     ]
 }
