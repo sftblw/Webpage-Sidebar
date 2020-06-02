@@ -1,6 +1,10 @@
 # Webpage-Sidebar
 
-- [WebExtensions API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) based sidebar website viewer
+[WebExtensions API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) based sidebar website viewer
+
+[![Github last commit badge](https://img.shields.io/github/last-commit/sftblw/Webpage-Sidebar?style=flat-square)](https://github.com/sftblw/Webpage-Sidebar/commits/develop)
+[![AMO version](https://img.shields.io/amo/v/Webpage-Sidebar?style=flat-square)](https://addons.mozilla.org/firefox/addon/webpage-sidebar/)
+[![Code Climate Coverage badge](https://img.shields.io/codeclimate/coverage/sftblw/Webpage-Sidebar?style=flat-square)](https://codeclimate.com/github/sftblw/Webpage-Sidebar)
 
 ## Get it
 
