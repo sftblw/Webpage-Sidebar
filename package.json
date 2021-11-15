@@ -4,6 +4,7 @@
   "description": "Opens websites on sidebar managed on addon popup button",
   "scripts": {
     "build": "parcel build src/manifest.json  --config @parcel/config-webextension --dist-dir extension",
+    "build-ext": "npm run build && web-ext build -s ./extension --overwrite-dest",
     "start": "web-ext run -s extension/"
   },
   "repository": {

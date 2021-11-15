@@ -13,13 +13,10 @@
 
 1. `npm install`
 2. `npm run build`
-3. open your firefox and go to [about:debugging](about:debugging)
-4. load `extension/manifest.json`
-5. test
-
-### vscode
-
-or on VSCode, build and F5.
+3. start debugging:
+  - `npm run start`
+  - or open your firefox and go to [about:debugging](about:debugging) and load `extension/manifest.json`
+4. test
 
 ## test code
 
