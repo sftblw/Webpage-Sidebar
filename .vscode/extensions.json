@@ -2,7 +2,6 @@
     "recommendations": [
         "ms-vscode.vscode-typescript-tslint-plugin",
         "prograhammer.tslint-vue",
-        "octref.vetur",
-        "robinbentley.sass-indented"
+        "octref.vetur"
     ]
 }
