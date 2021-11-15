@@ -1,9 +1,7 @@
-import Vue from 'vue';
-import Vuex, { Store } from 'vuex';
+import { createStore } from 'vuex'
 import { Site, SiteState } from '../common/types'
 import { StorageManager, MsgFromStorage } from '../background/storage'
 
-Vue.use(Vuex)
 const isDebug = process.env.NODE_ENV !== 'production';
 
 let _storageManager: StorageManager | null = null;
@@ -15,9 +13,9 @@ const getStorageManager = async function () {
     return _storageManager;
 }
 
-const store = new Store<SiteState>({
+const store = createStore<SiteState>({
     // data
-    state: new SiteState(),
+    state() { return new SiteState() },
     // "message": actual state tree morpher
     mutations: {
         replaceSites(_: SiteState, newSiteState: SiteState): void {

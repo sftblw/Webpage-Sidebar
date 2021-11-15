@@ -3,7 +3,7 @@
         "outDir": "extension",
         //// vue.js settings
         // https://kr.vuejs.org/v2/guide/typescript.html
-        "target": "es5",
+        "target": "esnext",
         "strict": true,
         "module": "esnext",
         "moduleResolution": "node",
@@ -11,7 +11,7 @@
         //// web-ext-types settings
         "typeRoots": [
             "./node_modules/@types/",
-            "./typings/",
+            "./src/types",
             "./node_modules/web-ext-types"
         ],
         //// web settings
