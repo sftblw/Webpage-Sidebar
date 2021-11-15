@@ -1,12 +1,10 @@
-import Vue from 'vue'
-
+import { createApp } from 'vue';
 import { store } from './store';
-import App from './components/App.vue';
+import Launcher from './components/Launcher.vue';
 
-let vue = new Vue({
-    el: '#app',
-    store: store,
-    render: h => h(App)
-});
+const app = createApp(Launcher);
 
-vue.$store.dispatch('updateFromStorage');
+app.use(store);
+app.mount('#app')
+
+store.dispatch('updateFromStorage');

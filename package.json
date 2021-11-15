@@ -2,11 +2,10 @@
   "name": "webpage-sidebar",
   "version": "0.1.0",
   "description": "Opens websites on sidebar managed on addon popup button",
-  "main": "index.js",
   "scripts": {
-    "build": "npx gulp && parcel build src/manifest.json --out-dir extension && npx gulp manifest_copy",
-    "build-ext": "npm run build && npx web-ext build -s ./extension --overwrite-dest",
-    "start": "npx web-ext run -s extension/"
+    "build": "parcel build src/manifest.json  --config @parcel/config-webextension --dist-dir extension",
+    "build-ext": "npm run build && web-ext build -s ./extension --overwrite-dest",
+    "start": "web-ext run -s extension/"
   },
   "repository": {
     "type": "git",
@@ -22,27 +21,20 @@
   },
   "homepage": "https://github.com/sftblw/Webpage-Sidebar#readme",
   "devDependencies": {
-    "@types/node": "^13.13.1",
-    "@vue/component-compiler-utils": "^3.1.2",
-    "acorn": "^7.1.1",
-    "del": "^5.1.0",
-    "eslint": "^6.8.0",
-    "gulp": "^4.0.0",
-    "parcel-bundler": "^1.12.3",
-    "parcel-plugin-web-extension": "^1.5.2",
-    "sass": "^1.17.3",
-    "tslint-config-semistandard": "^8.0.1",
-    "typescript": "^3.3.4000",
-    "typescript-eslint": "0.0.1-alpha.0",
-    "vue": "^2.6.10",
-    "vue-class-component": "^7.0.1",
-    "vue-hot-reload-api": "^2.3.3",
-    "vue-property-decorator": "^8.0.0",
-    "vue-router": "^3.1.6",
-    "vue-template-compiler": "^2.6.10",
-    "vuex": "^3.2.0",
-    "web-ext": "^4.1.0",
-    "web-ext-types": "^3.1.0",
-    "tslint-to-eslint-config": "^0.6.0"
+    "@parcel/config-webextension": "^2.0.1",
+    "@parcel/transformer-sass": "^2.0.1",
+    "@parcel/transformer-vue": "^2.0.1",
+    "@types/node": "^16.11.7",
+    "@vue/component-compiler-utils": "^3.3.0",
+    "parcel": "^2",
+    "tslint": "^5.20.1",
+    "typescript": "^4.4.4",
+    "web-ext": "^6.5.0",
+    "web-ext-types": "^3.2.1"
+  },
+  "dependencies": {
+    "@swc/helpers": "^0.2.14",
+    "vue": "^3.2.22",
+    "vuex": "^4.0.2"
   }
 }

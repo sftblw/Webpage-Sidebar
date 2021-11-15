@@ -1,6 +1,9 @@
 .cache
+.idea
 extension
 package-lock.json
+.parcel-cache
+
 
 web-ext-artifacts
 
