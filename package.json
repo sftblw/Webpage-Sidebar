@@ -1,6 +1,6 @@
 {
   "name": "webpage-sidebar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Opens websites on sidebar managed on addon popup button",
   "scripts": {
     "build": "parcel build src/manifest.json  --config @parcel/config-webextension --dist-dir extension",
