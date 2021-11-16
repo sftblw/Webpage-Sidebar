@@ -5,6 +5,8 @@
         - style for dark mode browser (partially solves #28). it does not support manual toggling.
     - changed
         - button icons are replaced from emoji to svg image, to change color of it.
+    - fixed
+        - will not prevent you anymore to add your custom-schemed URLs, like `moz-extension://`.
 - internal changes
     - changed
         - (dependency) vue 2 -> vue 3, vuex 3 -> vuex 4

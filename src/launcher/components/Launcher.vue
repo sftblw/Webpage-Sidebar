@@ -99,13 +99,32 @@ export default defineComponent({
       });
     },
     validateUrl(url: string) {
+      url = url.trim();
       if (url === "") {
         throw "Site URL is empty.";
-      } else if (url.match(/^file:\/\//g)) {
+      }
+
+      if (url.match(/^file:\/\//g)) {
         throw "This addon does not support local files yet.";
-      } else if (!url.match(/^http/g)) {
+      }
+
+      let matches_http_s = !url.match(/^https?:\/\//g);
+      if (matches_http_s && url.match(/^.*?:\/\//g)) {
+        let confirmed = window.confirm(
+          `This scheme is not expected by the use case of this add-on.\nAre you sure to add this URL?\n${url}`
+        );
+        if (confirmed) {
+          return url;
+        } else {
+          return ""; // ugly api design, returning empty string is doing nothing
+        }
+      }
+
+      if (!url.match(/^http/g)) {
         return `https://${url}`;
-      } else return url.trim();
+      }
+
+      return url;
     },
   },
 });
