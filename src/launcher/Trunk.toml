@@ -1,0 +1,3 @@
+[build]
+dist = "../../dist/launcher"
+filehash = false

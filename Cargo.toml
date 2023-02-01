@@ -1,0 +1,8 @@
+[workspace]
+
+members = [
+    "xtask",
+    "src/background",
+    "src/sidebar",
+    "src/launcher"
+]

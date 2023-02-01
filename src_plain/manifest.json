@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "Webpage Sidebar",
+    "version": "0.1.1",
+    "description": "Opens websites on sidebar managed on addon popup button",
+    "icons": {
+      "32": "icon/icon-32.png",
+      "48": "icon/icon-48.png",
+      "64": "icon/icon-64.png"
+    },
+    "applications": {
+      "gecko": {
+        "id": "webpage_sidebar@sftblw.moe"
+      }
+    },
+    "permissions": [
+      "storage"
+    ],
+    "background": {
+      "scripts": [
+        "background/storage.ts"
+      ]
+    },
+    "browser_action": {
+      "default_icon": "icon/icon-48.png",
+      "default_title": "Webpage Sidebar Adder",
+      "default_popup": "launcher/launcher.html",
+      "browser_style": true
+    },
+    "sidebar_action": {
+      "default_icon": "icon/icon-48.png",
+      "default_title": "Webpage Sidebar Viewer",
+      "default_panel": "sidebar/sidebar.html"
+    }
+  }

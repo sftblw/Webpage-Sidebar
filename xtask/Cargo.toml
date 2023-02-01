@@ -1,0 +1,21 @@
+[package]
+name = "xtask"
+version = "0.1.0"
+edition = "2021"
+authors = ["sftblw <ccwpc@hamail.net>"]
+description = "build tool for webpage-sidebar, following rust xtask pattern"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1"  # error handling
+
+clap = {version = "4", features = ["derive"]}  # cli
+
+cargo_metadata = "0.15"  # get crates
+
+xshell = "0.2" # cross platform shell
+fs_extra = "1.2"
+
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt"] }
