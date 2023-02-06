@@ -20,7 +20,8 @@ struct Cli {
 enum Commands {
     /// Adds files to myapp
     Build {
-        _name: Option<String>,
+        #[arg(short, long, action = clap::ArgAction::SetTrue)]
+        release: bool,
     },
     Clean {
         #[arg(short, long, action = clap::ArgAction::SetTrue)]
@@ -34,7 +35,7 @@ fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     match &cli.command {
-        Commands::Build { _name } => cmd::build::build()?,
+        Commands::Build { release } => cmd::build::build(*release)?,
         Commands::Clean { full }=> cmd::clean::clean(*full)?,
     }
     Ok(())

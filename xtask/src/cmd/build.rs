@@ -3,9 +3,10 @@ use std::{process::{Command}, fs, path::PathBuf, str::FromStr};
 use tracing::*;
 
 use crate::{workspace_helpers::{workspace_crates, workspace_root}, DIST_PATH};
+use crate::cmd::command_ext::OptionalCommand;
 
 #[tracing::instrument]
-pub(crate) fn build() -> anyhow::Result<()> {
+pub(crate) fn build(release: bool) -> anyhow::Result<()> {
     info!("start");
 
     let info_list = workspace_crates()?;
@@ -13,19 +14,29 @@ pub(crate) fn build() -> anyhow::Result<()> {
     for info in info_list {
         let span = tracing::span!(Level::INFO, "", info.name);
         let _entered = span.enter();
-        
+
         if info.path.join("index.html").exists() {
             info!(
                 "[{}] Trunk.toml exists. launching trunk build ...",
                 info.name
             );
             
-            let mut handle = Command::new("trunk").arg("build").current_dir(info.path).spawn()?;
+            let mut handle = Command::new("trunk")
+                .arg("build")
+                .arg_opt(release.then_some("--release"))
+                .current_dir(info.path)
+                .spawn()?;
+
             handle.wait()?;
         } else {
             info!("[{}] launching build ...", info.name);
 
-            let mut handle = Command::new("cargo").arg("build").current_dir(info.path).spawn()?;
+            let mut handle = Command::new("cargo")
+                .arg("build")
+                .arg_opt(release.then_some("--release"))
+                .current_dir(info.path)
+                .spawn()?;
+
             handle.wait()?;
         }
     }
