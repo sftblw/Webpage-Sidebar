@@ -39,7 +39,6 @@ pub(crate) fn build() -> anyhow::Result<()> {
     for entry in read_result {
         let entry = entry?;
         let file_type = entry.file_type()?;
-        println!("{:?}", entry);
         
         if file_type.is_dir() {
             let copy_options = fs_extra::dir::CopyOptions { overwrite: true, skip_exist: false, ..Default::default() };

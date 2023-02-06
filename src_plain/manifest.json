@@ -17,19 +17,17 @@
       "storage"
     ],
     "background": {
-      "scripts": [
-        "background/storage.ts"
-      ]
+      "page": "background/index.html"
     },
     "browser_action": {
       "default_icon": "icon/icon-48.png",
       "default_title": "Webpage Sidebar Adder",
-      "default_popup": "launcher/launcher.html",
+      "default_popup": "launcher/index.html",
       "browser_style": true
     },
     "sidebar_action": {
       "default_icon": "icon/icon-48.png",
       "default_title": "Webpage Sidebar Viewer",
-      "default_panel": "sidebar/sidebar.html"
+      "default_panel": "sidebar/index.html"
     }
   }

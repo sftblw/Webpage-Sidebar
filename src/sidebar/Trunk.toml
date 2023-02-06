@@ -1,3 +1,7 @@
 [build]
 dist = "../../dist/sidebar"
 filehash = false
+# https://github.com/thedodd/trunk/issues/90#issuecomment-1308143361
+# 0.14.0 https://github.com/thedodd/trunk/blob/b41a9575d441ab5d0cea2110a1de92146bdd25e4/CHANGELOG.md
+pattern_script = """<script type="module" src="./index.js"></script>"""
+public_url = "./"
