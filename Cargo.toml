@@ -2,6 +2,7 @@
 
 members = [
     "xtask",
+    "src/common",
     "src/background",
     "src/sidebar",
     "src/launcher"
