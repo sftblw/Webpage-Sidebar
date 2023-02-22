@@ -7,3 +7,8 @@ edition = "2021"
 
 [dependencies]
 common = { path = "../common" }
+serde = { version = "1", features = ["derive"] }
+wasm-bindgen =  { version = "0.2", features = ["serde-serialize"] }
+web-sys = { version = "0.3", features = ["console"] }
+js-sys = "0.3"
+wasm-bindgen-futures = "0.4"
