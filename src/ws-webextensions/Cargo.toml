@@ -1,15 +1,9 @@
 [package]
-name = "background"
+name = "ws-webextensions"
 version = "0.1.0"
 edition = "2021"
 
-[lib]
-crate-type = ["cdylib"]
-
 [dependencies]
-ws-webextensions = { version = "0.1.0", path = "../ws-webextensions" }
-common = { version = "0.1.0", path = "../common" }
-serde = { version = "1", features = ["derive"] }
 wasm-bindgen =  { version = "0.2", features = ["serde-serialize"] }
 web-sys = { version = "0.3", features = ["console"] }
 js-sys = "0.3"

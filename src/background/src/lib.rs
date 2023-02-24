@@ -1,9 +1,7 @@
-mod storage;
-mod browser;
+use wasm_bindgen::prelude::*;
+use ws_webextensions::browser;
 
-use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
-
-
+#[wasm_bindgen(start)]
 pub fn main() {
     // ref: https://github.com/thedodd/trunk/issues/466
     // ref: https://github.com/emilk/eframe_template/pull/83/files
@@ -15,9 +13,9 @@ pub fn main() {
 // #[wasm_bindgen(start)]
 pub async fn main_js() -> Result<(), JsValue> {
     web_sys::console::log_1(&"hello world".into());
-    browser::local.clear().await;
+    browser::storage::LOCAL.clear().await;
     web_sys::console::log_1(&"clear".into());
-    web_sys::console::log_1(&browser::local.get_1("asdf").await.expect("asdf"));
-
+    // browser::storage::LOCAL.set_1("{asdf}").await?;
+    web_sys::console::log_1(&browser::storage::LOCAL.get_1("asdf").await.expect("asdf"));
     Ok(())
 }
